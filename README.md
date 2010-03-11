@@ -1,4 +1,5 @@
 ## CSV 2 Files
+
 Generates a directory containing a file for each row in a CSV file.
 
 For example, the following CSV:
@@ -13,12 +14,15 @@ Will generate the following directory structure:
       louis 
       dimitar
 
-Where the first file contains the following:
+Where the first file contains:
 
     Report=50
     Code=25
     
-    
+And the second file contains:
+
+    Report=50
+    Code=50   
 
 ## Installation
 
