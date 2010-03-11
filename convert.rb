@@ -5,7 +5,7 @@ class Convert
   def run
     FileUtils.rm_rf('output') if File.directory?('output')
     Dir.mkdir('output')
-    CsvToFiles.new('input.csv', 'output').run
+    CsvToFiles.new('input.csv', 'header.txt', 'output').run
   end
 end
 

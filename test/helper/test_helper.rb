@@ -2,12 +2,21 @@ require 'fileutils'
 require 'csv_to_files.rb'
 
 class TestHelper
-  def initialize(base_dir, csv)
+  def initialize(base_dir)
     @base_dir   = base_dir
     @output_dir = "#{base_dir}/output"
     
     clean_directories
-    convert_csv(csv)
+  end
+  
+  def write_header(header)
+    write_file('header.txt', header)
+  end
+  
+  def convert(csv)
+    write_file('input.csv', csv)
+    
+    CsvToFiles.new("#{@base_dir}/input.csv", "#{@base_dir}/header.txt", @output_dir).run
   end
   
   def output_filenames
@@ -29,8 +38,7 @@ private
     Dir.mkdir(@output_dir)
   end
   
-  def convert_csv(csv)
-    File.open('simple/input.csv', 'w') {|f| f.write(csv) }
-    CsvToFiles.new('simple/input.csv', @output_dir).run
+  def write_file(filename, contents)
+    File.open("#{@base_dir}/#{filename}", 'w') {|f| f.write(contents) }
   end
 end

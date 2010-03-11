@@ -4,7 +4,9 @@ require 'test/helper/test_helper.rb'
 class Simple < Test::Unit::TestCase
   
   def setup
-    @helper = TestHelper.new('simple', "Exam Number,Report,Code\nlouis,10,5\ndimitar,10,10")
+    @helper = TestHelper.new('simple')
+    
+    @helper.convert("Exam Number,Report,Code\nlouis,10,5\ndimitar,10,10")
   end
   
   def teardown
