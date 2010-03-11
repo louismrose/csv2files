@@ -1,4 +1,4 @@
-class RowToText
+class RowTransformer
   def initialize(*headings)
     @headings = *headings
   end

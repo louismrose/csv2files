@@ -1,4 +1,4 @@
-## CSV 2 Files
+## Csv2Files
 
 Generates a directory containing a file for each row in a CSV file.
 
@@ -26,7 +26,7 @@ And the second file contains:
 
 ## Installation
 
-Assuming that git and ruby are installed, CSV 2 Files can be installed by cloning this git repository:
+Assuming that git and ruby are installed, Csv2Files can be installed by cloning this git repository:
 
     git clone git://github.com/louismrose/csv2files.git
 
@@ -36,9 +36,9 @@ If you're behind a firewall, you may need to use HTTP:
 
 ## Usage
 
-From within the csv2files directory, CSV 2 Files is invoked using:
+From within the csv2files directory, Csv2Files is invoked using:
 
-    ruby convert.rb
+    ruby csv2files.rb
     
 This assumes a CSV file called input.csv in the csv2files directory, and generates files to the output directory. Any existing files in the output directory are deleted.
 

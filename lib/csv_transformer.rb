@@ -1,7 +1,7 @@
 require 'lib/csv_file.rb'
-require 'lib/row_to_text.rb'
+require 'lib/row_transformer.rb'
 
-class CsvToFiles
+class CsvTransformer
   def initialize(csv_path, header_path, output_path)
     @csv_path    = csv_path
     @output_path = output_path
@@ -9,7 +9,7 @@ class CsvToFiles
     @heading = File.exists?(header_path) ? File.open(header_path, "r").read : ''
   end
   
-  def run 
+  def transform 
     read_csv
     create_row_transformer
     transform_each_row
@@ -22,7 +22,7 @@ private
   end
   
   def create_row_transformer
-    @row_to_text = RowToText.new(@csv.column_names[1..-1])
+    @row_to_text = RowTransformer.new(@csv.column_names[1..-1])
   end
   
   def transform_each_row

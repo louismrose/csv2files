@@ -1,5 +1,5 @@
 require 'fileutils'
-require 'lib/csv_to_files.rb'
+require 'lib/csv_transformer.rb'
 
 class TestHelper
   def initialize(base_dir)
@@ -16,7 +16,7 @@ class TestHelper
   def convert(csv)
     write_file('input.csv', csv)
     
-    CsvToFiles.new("#{@base_dir}/input.csv", "#{@base_dir}/header.txt", @output_dir).run
+    CsvTransformer.new("#{@base_dir}/input.csv", "#{@base_dir}/header.txt", @output_dir).transform
   end
   
   def output_filenames
