@@ -1,5 +1,4 @@
-CSV 2 Files
-===========
+## CSV 2 Files
 Generates a directory containing a file for each row in a CSV file.
 
 For example, the following CSV:
@@ -21,14 +20,12 @@ Where the first file contains the following:
     
     
 
-Installation
-============
+## Installation
 
 Documentation coming soon!
 
 
-Usage
-=====
+## Usage
 
 Documentation coming soon!
 
