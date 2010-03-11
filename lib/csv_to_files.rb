@@ -1,5 +1,5 @@
-require 'csv_file.rb'
-require 'row_to_text.rb'
+require 'lib/csv_file.rb'
+require 'lib/row_to_text.rb'
 
 class CsvToFiles
   def initialize(csv_path, header_path, output_path)

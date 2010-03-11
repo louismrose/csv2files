@@ -1,5 +1,5 @@
 require 'fileutils'
-require 'csv_to_files.rb'
+require 'lib/csv_to_files.rb'
 
 class TestHelper
   def initialize(base_dir)

@@ -1,4 +1,4 @@
-require 'csv_to_files.rb'
+require 'lib/csv_to_files.rb'
 require 'fileutils'
 
 class Convert
