@@ -1,3 +1,4 @@
+require 'csv_file.rb'
 require 'row_to_text.rb'
 
 class CsvToFiles
@@ -9,15 +10,24 @@ class CsvToFiles
   end
   
   def run 
-    lines = File.open(@csv_path, "r").readlines
-    
-    headings = lines.first.split(',')[1..-1]
-    row_to_text = RowToText.new(headings)
-    
-    lines[1..-1].each do |line|
-      values = line.split(',')[1..-1]
-      transformed = row_to_text.transform(values)
-      write_file(line.split(',')[0], transformed)
+    read_csv
+    create_row_transformer
+    transform_each_row
+  end
+  
+private
+
+  def read_csv
+    @csv = CSVFile.new(@csv_path)
+  end
+  
+  def create_row_transformer
+    @row_to_text = RowToText.new(@csv.column_names[1..-1])
+  end
+  
+  def transform_each_row
+    @csv.per_row do |values|
+      write_file(values.first, @row_to_text.transform(values[1..-1]))
     end
   end
   

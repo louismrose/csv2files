@@ -4,12 +4,7 @@ class RowToText
   end
   
   def transform(values)
-    transformed = ""
-        
-    @headings.zip(values).each do |pair|
-      transformed += "#{pair.first.strip}=#{pair.last.strip}\n"
-    end
-    
-    transformed
+    pairs = @headings.zip(values)
+    pairs.inject('') { |result, pair| result + "#{pair.first.to_s.strip}=#{pair.last.to_s.strip}\n" }
   end
 end
